@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import { Button, Card, Col, Container, Form, Row, } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Nav, Row, } from 'react-bootstrap';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../../utils/Consts';
 import module from './Auth.module.css'
@@ -9,7 +9,6 @@ const Auth = observer( () => {
 
     const location = useLocation()
     const  isLogin = location.pathname === LOGIN_ROUTE ? true : false
-    console.log(location)
     return (
         <Container
             className="d-flex justify-content-center align-items-center"
@@ -30,11 +29,11 @@ const Auth = observer( () => {
                         {
                             isLogin ?
                         <div style={{width:"60%"}}>
-                            Нет аккаунта? <a href={REGISTRATION_ROUTE} >Зарегистрируйтесь!</a>
+                            Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}> Зарегистрируйтесь!</NavLink>
                         </div>
                         :
                         <div style={{width:"60%"}}>
-                            Есть аккаунт? <a href={LOGIN_ROUTE}>Войдите!</a>
+                            Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите!</NavLink>
                         </div>
                         }
                         

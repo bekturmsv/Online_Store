@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express-fileupload": "^1.4.0",
+    "history": "^5.3.0",
     "uuid": "^8.3.2"
   }
 }
