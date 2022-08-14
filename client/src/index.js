@@ -7,9 +7,10 @@ import DeviceStore from './store/DeviceStore';
 import UserStore from './store/UserStore';
 
 export const Context = createContext(null)
+console.log(process.env.REACT_APP_API_URL);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const history = createBrowserHistory()
+
 root.render(
   <BrowserRouter >
 
