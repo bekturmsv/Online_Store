@@ -12,7 +12,8 @@ console.log(process.env.REACT_APP_API_URL);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter >
+  
+<BrowserRouter>
 
     <Context.Provider value={{
       user: new UserStore(),
@@ -22,6 +23,6 @@ root.render(
         <App />
       </React.StrictMode>
     </Context.Provider>
-  </BrowserRouter>
+</BrowserRouter>
 
 );

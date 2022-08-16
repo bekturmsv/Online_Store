@@ -11,13 +11,12 @@ import { SHOP_ROUTE } from '../../utils/Consts';
 import NavBar from '../NavBar/NavBar';
 
 
-const AppRouter =  () => {
+const AppRouter =  observer( () => {
     const { user } = useContext(Context)
     
     return (
-        <>
-            <NavBar />
             <div>
+            <NavBar />
                 <Switch>
                     {user.isAuth && authRoutes.map(({ path, Component }) =>
                         <Route key={path} path={path} component={Component} exact />
@@ -28,8 +27,7 @@ const AppRouter =  () => {
                     <Redirect to={SHOP_ROUTE} />
                 </Switch>
             </div>
-        </>
     );
-};
+});
 
 export default AppRouter;

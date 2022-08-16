@@ -13,6 +13,10 @@ import { useHistory,useLocation, withRouter } from 'react-router-dom';
 
 const NavBar = observer (() => {
     const {user} = useContext(Context)
+    const logOut=()=>{
+      user.setUser({})
+      user.setIsAuth(false)
+    }
     let history = useHistory()
     return (
 
@@ -21,13 +25,12 @@ const NavBar = observer (() => {
           <NavLink className={module.brand} to = {SHOP_ROUTE}>КупиДевайс</NavLink>
           {user.isAuth ? 
           <Nav className={module.navItems} >
-            <Button variant={"outline-light"} onClick={()=>history.push(LOGIN_ROUTE)}>Выйти</Button>
+            <Button variant={"outline-light"} onClick={()=>logOut()}>Выйти</Button>
             <Button variant={"outline-light"} onClick={()=>history.push(ADMIN_ROUTE)}>Админ панель</Button>
           </Nav>
           :
           <Nav className={module.navItems} >
-            <Button variant={"outline-light"} onClick={()=>{
-              user.setIsAuth(true)
+            <Button variant={"outline-light"} onClick={()=>{history.push(LOGIN_ROUTE)
             }} >Авторизация</Button>
           </Nav>
 }
