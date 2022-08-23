@@ -10,21 +10,21 @@ This is an online store, with an admin panel, with registration and authorizatio
 
 # Launching the client side of the application
 
-### npm install - to load all libraries and modules
+### `npm install` - to load all libraries and modules
 
 <br>
 
-### npm start - for start
+### `npm start` - for start
 
 <br>
 
 # Launching the server side of the application
 
-### npm install - to load all libraries and modules
+### `npm install` - to load all libraries and modules
 
 <br>
 
-### npm run dev - for start
+### `npm run dev` - for start
 
 <br>
 
